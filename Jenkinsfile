@@ -3,23 +3,14 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                echo 'Checking out code from GitHub...'
-                checkout scm
-            }
-        }
-
         stage('Deploy') {
             steps {
-                echo 'Deploying to Nginx...'
+                echo 'Deploying website to Nginx'
 
                 sh '''
                 rm -rf /var/www/html/*
                 cp -r *.html css images js /var/www/html/ || true
                 '''
-
-                echo 'Deployment completed successfully'
             }
         }
     }
