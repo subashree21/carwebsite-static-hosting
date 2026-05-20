@@ -13,9 +13,8 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 sh '''
-                sudo rm -rf /var/www/html/*
-                sudo cp -r index.html css js images /var/www/html/ || true
-                sudo systemctl restart nginx
+                rm -rf /var/www/html/*
+                cp -r index.html style.css script.js images /var/www/html/
                 '''
             }
         }
