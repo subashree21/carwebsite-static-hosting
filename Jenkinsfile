@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh '''
                 rm -rf /var/www/html/*
-                cp -r index.html style.css script.js images /var/www/html/
+                cp -r *.html css images js /var/www/html/
                 '''
             }
         }
